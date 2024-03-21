@@ -38,6 +38,9 @@ dependencies:
   camera: ^0.10.5+9
   image_picker: ^1.0.7
   json_theme: ^6.4.1
+  path_provider: ^2.1.2
+  path: ^1.9.0
+  permission_handler: ^11.3.0
 
 dev_dependencies:
   flutter_test:

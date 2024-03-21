@@ -7,7 +7,7 @@
 
 import 'dart:convert';
 
-import 'package:auvo_mvp/screens/main.dart';
+import 'package:auvo_mvp/main.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
