@@ -1,4 +1,5 @@
 import 'package:auvo_mvp/screens/camera_page.dart';
+import 'package:auvo_mvp/widgets/side_menu.dart';
 import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
 
@@ -57,8 +58,10 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('App Home'),
+        title: Text('AUVO'),
+        centerTitle: true,
       ),
+      drawer: SideMenu(),
       body: Padding(
         padding: const EdgeInsets.all(20.0),
         child: Column(

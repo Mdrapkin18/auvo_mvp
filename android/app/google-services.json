@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "754254436761",
+    "project_id": "auvo-mvp",
+    "storage_bucket": "auvo-mvp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:754254436761:android:d62697044d93ee5fe69b08",
+        "android_client_info": {
+          "package_name": "com.auvo.auvo_mvp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA3g0eVLPi1ekDj_KkwJPUG38mfKVr8ioc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
