@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:auvo_mvp/screens/data_validation.dart';
 import 'package:auvo_mvp/widgets/reusable_camera_widget.dart';
 import 'package:camera/camera.dart';
 import 'package:firebase_storage/firebase_storage.dart';
@@ -116,7 +117,10 @@ class _CameraPageState extends State<CameraPage> {
             print('Time: $time');
 
             ScaffoldMessenger.of(context).showSnackBar(snackBar);
-            Navigator.pop(context);
+            Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => DataValidationResponse()));
           },
           child: Text('Submit'),
         ),
