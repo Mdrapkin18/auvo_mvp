@@ -1,3 +1,5 @@
+import 'package:auvo_mvp/screens/login.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class SideMenu extends StatefulWidget {
@@ -8,15 +10,19 @@ class SideMenu extends StatefulWidget {
 }
 
 class _SideMenuState extends State<SideMenu> {
+  final FirebaseAuth _auth = FirebaseAuth.instance;
+
+  void _logout() async {
+    await _auth.signOut();
+    // Navigate to the login screen (or however you wish to handle the post-logout flow)
+    Navigator.pushReplacement(
+        context, MaterialPageRoute(builder: (context) => LoginScreen()));
+  }
+
   @override
   Widget build(BuildContext context) {
     return Drawer(
-      // Add a ListView to the drawer. This ensures the user can scroll
-      // through the options in the drawer if there isn't enough vertical
-      // space to fit everything.
-      child: ListView(
-        // Important: Remove any padding from the ListView.
-        padding: EdgeInsets.zero,
+      child: Column(
         children: [
           DrawerHeader(
             decoration: BoxDecoration(color: Theme.of(context).primaryColor),
@@ -36,6 +42,12 @@ class _SideMenuState extends State<SideMenu> {
               // Update the state of the app.
               // ...
             },
+          ),
+          Expanded(child: SizedBox()),
+          ListTile(
+            title: const Text('Log out'),
+            leading: Icon(Icons.logout),
+            onTap: _logout,
           ),
         ],
       ),

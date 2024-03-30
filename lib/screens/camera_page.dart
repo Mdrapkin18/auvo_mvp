@@ -108,10 +108,15 @@ class _CameraPageState extends State<CameraPage> {
           onPressed: () {
             // TODO: Implement your submission logic here
 
+            DateTime now = DateTime.now();
             String time = DateTime.now().millisecondsSinceEpoch.toString();
-
-            imageRef.child('${time}_front.jpg').putFile(File(_frontImagePath!));
-            imageRef.child('${time}_back.jpg').putFile(File(_backImagePath!));
+            String date = DateTime(now.year, now.month, now.day).toString();
+            imageRef
+                .child('$date/${time}_front.jpg')
+                .putFile(File(_frontImagePath!));
+            imageRef
+                .child('$date/${time}_back.jpg')
+                .putFile(File(_backImagePath!));
 
             print('Submitted images to Firebase');
             print('Time: $time');

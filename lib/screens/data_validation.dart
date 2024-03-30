@@ -43,6 +43,7 @@ class _DataValidationResponseState extends State<DataValidationResponse> {
           ListView.builder(
             controller: _controller,
             itemCount: 10, // Assuming you have 10 items to display
+            padding: EdgeInsets.only(bottom: 80),
             itemBuilder: (context, index) {
               bool isExpanded = _expandedIndex == index;
               return Card(
@@ -120,6 +121,9 @@ class _DataValidationResponseState extends State<DataValidationResponse> {
                   style: ElevatedButton.styleFrom(
                     backgroundColor:
                         Theme.of(context).appBarTheme.backgroundColor,
+                    elevation: 10,
+                    minimumSize: Size(MediaQuery.sizeOf(context).width * .5,
+                        MediaQuery.sizeOf(context).height * .05),
                   ),
                   onPressed: () {
                     Navigator.pushReplacement(
